@@ -61,8 +61,8 @@ export function About() {
           ))}
         </div>
 
-        <div className="mt-6 grid gap-5 lg:grid-cols-3">
-          <div className="rounded-3xl border-2 border-foreground bg-card p-7 shadow-[5px_5px_0_0_var(--foreground)] lg:col-span-2">
+        <div className="mt-6">
+          <div className="rounded-3xl border-2 border-foreground bg-card p-7 shadow-[5px_5px_0_0_var(--foreground)]">
             <h3 className="font-heading text-2xl font-extrabold">My story</h3>
             <p className="mt-3 leading-relaxed text-muted-foreground">
               I&apos;m a Computer Science (AI &amp; Data Science) student at Reva
@@ -73,31 +73,6 @@ export function About() {
               Indian college students. I train daily and am laser-focused on
               reaching financial independence through meaningful products.
             </p>
-          </div>
-
-          <div className="rounded-3xl border-2 border-foreground bg-secondary p-7 shadow-[5px_5px_0_0_var(--foreground)]">
-            <h3 className="font-heading text-2xl font-extrabold">Goals</h3>
-            <ul className="mt-4 space-y-4 text-sm">
-              <li>
-                <span className="font-heading font-extrabold">Short-term</span>
-                <p className="mt-0.5 leading-relaxed opacity-90">
-                  Launch Calibay and ship products people love.
-                </p>
-              </li>
-              <li>
-                <span className="font-heading font-extrabold">Medium-term</span>
-                <p className="mt-0.5 leading-relaxed opacity-90">
-                  Grow Calibay and gain real-world traction.
-                </p>
-              </li>
-              <li>
-                <span className="font-heading font-extrabold">Long-term</span>
-                <p className="mt-0.5 leading-relaxed opacity-90">
-                  An AI/ML role at a top lab or MNC, plus income from products I
-                  build.
-                </p>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
