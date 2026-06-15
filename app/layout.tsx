@@ -14,9 +14,9 @@ const bricolage = Bricolage_Grotesque({
 })
 
 export const metadata: Metadata = {
-  title: 'Maya Rao — Student Portfolio',
+  title: 'Priyu — Student Portfolio',
   description:
-    'The creative e-portfolio of Maya Rao: projects, skills, achievements, and reflections from a curious student.',
+    'The creative e-portfolio of Priyu: projects, skills, achievements, and reflections from a curious student.',
   generator: 'v0.app',
   icons: {
     icon: [

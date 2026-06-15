@@ -1,9 +1,9 @@
-import { Mail, Code2, AtSign } from "lucide-react"
+import { Mail, Github, Linkedin } from "lucide-react"
 
 const socials = [
-  { icon: Code2, label: "GitHub", href: "https://github.com/priyadarshanlol" },
+  { icon: Github, label: "GitHub", href: "https://github.com/priyadarshanlol" },
   {
-    icon: AtSign,
+    icon: Linkedin,
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/priyadarshan-v",
   },
@@ -26,11 +26,11 @@ export function Contact() {
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <a
-            href="mailto:maya@example.com"
+            href="mailto:priyadarshanv21@gmail.com"
             className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card px-6 py-3 font-bold text-foreground shadow-[4px_4px_0_0_var(--foreground)] transition-transform hover:-translate-y-0.5"
           >
             <Mail className="size-5" aria-hidden="true" />
-            maya@example.com
+            priyadarshanv21@gmail.com
           </a>
 
           <div className="flex gap-3">
@@ -51,7 +51,7 @@ export function Contact() {
       </div>
 
       <footer className="mx-auto mt-12 max-w-6xl border-t-2 border-foreground pt-6 text-center text-sm font-semibold text-muted-foreground">
-        Made with curiosity by Maya Rao — {new Date().getFullYear()}
+        Made with curiosity by Priyu — {new Date().getFullYear()}
       </footer>
     </section>
   )

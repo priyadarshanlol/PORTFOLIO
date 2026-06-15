@@ -1,5 +1,15 @@
 import Image from "next/image"
-import { ArrowDown, MapPin, GraduationCap } from "lucide-react"
+import { ArrowDown, MapPin, GraduationCap, Github, Linkedin, Mail } from "lucide-react"
+
+const profileLinks = [
+  { icon: Github, label: "GitHub", href: "https://github.com/priyadarshanlol" },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/priyadarshan-v",
+  },
+  { icon: Mail, label: "Email", href: "mailto:priyadarshanv21@gmail.com" },
+]
 
 export function Hero() {
   return (
@@ -54,6 +64,21 @@ export function Hero() {
             <span className="inline-flex items-center gap-1.5">
               <GraduationCap className="size-4 text-accent" /> Reva University
             </span>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            {profileLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                aria-label={link.label}
+                className="flex size-11 items-center justify-center rounded-full border-2 border-foreground bg-card text-foreground shadow-[3px_3px_0_0_var(--foreground)] transition-transform hover:-translate-y-0.5"
+              >
+                <link.icon className="size-5" aria-hidden="true" />
+              </a>
+            ))}
           </div>
         </div>
 
