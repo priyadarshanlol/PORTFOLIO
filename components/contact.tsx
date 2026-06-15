@@ -1,9 +1,9 @@
-import { Mail, Github, Linkedin } from "lucide-react"
+import { Mail, Code2, AtSign } from "lucide-react"
 
 const socials = [
-  { icon: Github, label: "GitHub", href: "https://github.com/priyadarshanlol" },
+  { icon: Code2, label: "GitHub", href: "https://github.com/priyadarshanlol" },
   {
-    icon: Linkedin,
+    icon: AtSign,
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/priyadarshan-v",
   },

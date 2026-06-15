@@ -1,10 +1,10 @@
 import Image from "next/image"
-import { ArrowDown, MapPin, GraduationCap, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowDown, MapPin, GraduationCap, Code2, AtSign, Mail } from "lucide-react"
 
 const profileLinks = [
-  { icon: Github, label: "GitHub", href: "https://github.com/priyadarshanlol" },
+  { icon: Code2, label: "GitHub", href: "https://github.com/priyadarshanlol" },
   {
-    icon: Linkedin,
+    icon: AtSign,
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/priyadarshan-v",
   },
