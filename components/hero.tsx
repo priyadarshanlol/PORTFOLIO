@@ -1,14 +1,15 @@
 import Image from "next/image"
-import { ArrowDown, MapPin, GraduationCap, Code2, AtSign, Mail } from "lucide-react"
+import { ArrowDown, MapPin, GraduationCap } from "lucide-react"
+import { GithubIcon, LinkedinIcon, GmailIcon } from "@/components/brand-icons"
 
 const profileLinks = [
-  { icon: Code2, label: "GitHub", href: "https://github.com/priyadarshanlol" },
+  { icon: GithubIcon, label: "GitHub", href: "https://github.com/priyadarshanlol" },
   {
-    icon: AtSign,
+    icon: LinkedinIcon,
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/priyadarshan-v",
   },
-  { icon: Mail, label: "Email", href: "mailto:priyadarshanv21@gmail.com" },
+  { icon: GmailIcon, label: "Email", href: "mailto:priyadarshanv21@gmail.com" },
 ]
 
 export function Hero() {
