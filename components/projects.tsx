@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 
@@ -53,20 +51,13 @@ export function Projects() {
 
         <div className="mt-12 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <article
+            <a
               key={project.title}
-              role={project.href ? "link" : undefined}
-              tabIndex={project.href ? 0 : undefined}
-              onClick={() => {
-                if (project.href) window.open(project.href, "_blank", "noopener,noreferrer")
-              }}
-              onKeyDown={(event) => {
-                if (project.href && (event.key === "Enter" || event.key === " ")) {
-                  event.preventDefault()
-                  window.open(project.href, "_blank", "noopener,noreferrer")
-                }
-              }}
-              className={`group flex flex-col overflow-hidden rounded-3xl border-2 border-foreground bg-card shadow-[6px_6px_0_0_var(--foreground)] transition-transform hover:-translate-y-1.5 ${project.href ? "cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary" : ""}`}
+              href={project.href}
+              target={project.href ? "_blank" : undefined}
+              rel={project.href ? "noopener noreferrer" : undefined}
+              aria-label={project.href ? `Open ${project.title}` : undefined}
+              className={`group flex flex-col overflow-hidden rounded-3xl border-2 border-foreground bg-card shadow-[6px_6px_0_0_var(--foreground)] transition-transform hover:-translate-y-1.5 ${project.href ? "cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary" : "cursor-default"}`}
             >
               <div className={`border-b-2 border-foreground p-4 ${project.tint}`}>
                 <Image
@@ -100,7 +91,7 @@ export function Projects() {
                   ))}
                 </ul>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </div>
