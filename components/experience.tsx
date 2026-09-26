@@ -1,4 +1,4 @@
-import { Briefcase, PenTool, Megaphone, BadgeCheck } from "lucide-react"
+import { Briefcase, PenTool, BadgeCheck } from "lucide-react"
 
 const roles = [
   {
@@ -13,21 +13,27 @@ const roles = [
     period: "2023 – Present",
     body: "Brand kits and Canva templates sold via Gumroad and Etsy for clients and creators.",
   },
-  {
-    icon: Megaphone,
-    role: "AI & Tech Content Creator",
-    period: "Ongoing",
-    body: "Building a LinkedIn personal brand for an AI-curious student audience.",
-  },
 ]
 
 const certs = [
-  { name: "Python for Everybody", org: "Coursera · University of Michigan", date: "Jan 2024" },
-  { name: "Machine Learning Fundamentals", org: "Google · Kaggle", date: "Mar 2024" },
-  { name: "UI/UX Design Foundations", org: "Coursera · Google", date: "May 2024" },
-  { name: "Internet of Things with Arduino", org: "NPTEL · IIT", date: "Aug 2024" },
-  { name: "SQL for Data Science", org: "DataCamp", date: "Oct 2024" },
-  { name: "Data Analysis with Python", org: "IBM · Coursera", date: "Dec 2024" },
+  {
+    name: "Instagram System Design Course: From Concept to Reality",
+    org: "Scaler Topics",
+    date: "24 Jun 2026",
+    description:
+      "Completed 13 video tutorials, 1 module, and 1 challenge on designing a large-scale system like Instagram.",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-VV2DKRtuYJKHN5X0wwdwJgT3dVXClr.png",
+  },
+  {
+    name: "Ignite Full — Entrepreneurship Program",
+    org: "Wadhwani Foundation · Reva University",
+    date: "12 Jun 2026",
+    description:
+      "Completed 42 hours of coursework covering ideation, business modeling, and financial planning as part of the Ignite entrepreneurship program.",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-3nYrkUWO1F1XZOYTK49GKDnkfdDKFB.png",
+  },
 ]
 
 export function Experience() {
@@ -70,14 +76,22 @@ export function Experience() {
               {certs.map((c) => (
                 <li
                   key={c.name}
-                  className="flex items-start gap-3 rounded-2xl border-2 border-foreground bg-card p-4"
+                  className="rounded-2xl border-2 border-foreground bg-card p-4"
                 >
-                  <BadgeCheck className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" />
-                  <div className="flex-1">
-                    <p className="font-heading font-extrabold leading-tight">{c.name}</p>
-                    <p className="text-sm text-muted-foreground">{c.org}</p>
+                  <div className="flex items-start gap-3">
+                    <BadgeCheck className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" />
+                    <div className="flex-1">
+                      <p className="font-heading font-extrabold leading-tight">{c.name}</p>
+                      <p className="text-sm text-muted-foreground">{c.org}</p>
+                      <p className="mt-1 text-xs font-bold text-muted-foreground">Issued {c.date}</p>
+                    </div>
                   </div>
-                  <span className="shrink-0 text-xs font-bold text-muted-foreground">{c.date}</span>
+                  <img
+                    src={c.image}
+                    alt={`${c.name} certificate for Priyadarshan`}
+                    className="mt-4 h-44 w-full rounded-xl border-2 border-foreground object-contain object-left bg-white"
+                  />
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.description}</p>
                 </li>
               ))}
             </ul>

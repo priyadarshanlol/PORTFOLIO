@@ -1,9 +1,9 @@
-import { Mail, Code2, AtSign } from "lucide-react"
+import { GithubIcon, LinkedinIcon, GmailIcon } from "@/components/brand-icons"
 
 const socials = [
-  { icon: Code2, label: "GitHub", href: "https://github.com/priyadarshanlol" },
+  { icon: GithubIcon, label: "GitHub", href: "https://github.com/priyadarshanlol" },
   {
-    icon: AtSign,
+    icon: LinkedinIcon,
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/priyadarshan-v",
   },
@@ -29,7 +29,7 @@ export function Contact() {
             href="mailto:priyadarshanv21@gmail.com"
             className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card px-6 py-3 font-bold text-foreground shadow-[4px_4px_0_0_var(--foreground)] transition-transform hover:-translate-y-0.5"
           >
-            <Mail className="size-5" aria-hidden="true" />
+            <GmailIcon className="size-5" />
             priyadarshanv21@gmail.com
           </a>
 
@@ -43,7 +43,7 @@ export function Contact() {
                 aria-label={social.label}
                 className="flex size-12 items-center justify-center rounded-full border-2 border-foreground bg-secondary text-secondary-foreground transition-transform hover:-translate-y-0.5"
               >
-                <social.icon className="size-5" aria-hidden="true" />
+                <social.icon className="size-5" />
               </a>
             ))}
           </div>
@@ -51,7 +51,7 @@ export function Contact() {
       </div>
 
       <footer className="mx-auto mt-12 max-w-6xl border-t-2 border-foreground pt-6 text-center text-sm font-semibold text-muted-foreground">
-        Made with curiosity by Priyu — {new Date().getFullYear()}
+        Made with curiosity by Priyadarshan — {new Date().getFullYear()}
       </footer>
     </section>
   )

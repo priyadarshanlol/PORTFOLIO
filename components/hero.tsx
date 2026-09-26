@@ -1,14 +1,15 @@
 import Image from "next/image"
-import { ArrowDown, MapPin, GraduationCap, Code2, AtSign, Mail } from "lucide-react"
+import { ArrowDown, MapPin, GraduationCap } from "lucide-react"
+import { GithubIcon, LinkedinIcon, GmailIcon } from "@/components/brand-icons"
 
 const profileLinks = [
-  { icon: Code2, label: "GitHub", href: "https://github.com/priyadarshanlol" },
+  { icon: GithubIcon, label: "GitHub", href: "https://github.com/priyadarshanlol" },
   {
-    icon: AtSign,
+    icon: LinkedinIcon,
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/priyadarshan-v",
   },
-  { icon: Mail, label: "Email", href: "mailto:priyadarshanv21@gmail.com" },
+  { icon: GmailIcon, label: "Email", href: "mailto:priyadarshanv21@gmail.com" },
 ]
 
 export function Hero() {
@@ -30,7 +31,7 @@ export function Hero() {
           </span>
 
           <h1 className="mt-5 text-balance font-heading text-5xl font-extrabold leading-[0.95] tracking-tight md:text-7xl">
-            Hi, I&apos;m Priyu — building with{" "}
+            Hi, I&apos;m Priyadarshan — building with{" "}
             <span className="text-primary">AI</span>, designing with{" "}
             <span className="text-accent">intent</span>.
           </h1>
@@ -83,16 +84,14 @@ export function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-sm">
-          <div className="animate-float rounded-[2rem] border-2 border-foreground bg-secondary p-3 shadow-[8px_8px_0_0_var(--foreground)]">
-            <Image
-              src="/priyu.png"
-              alt="Portrait of Priyu standing on a city street at night"
-              width={640}
-              height={640}
-              priority
-              className="h-auto w-full rounded-[1.5rem] border-2 border-foreground bg-card object-cover"
-            />
-          </div>
+          <Image
+            src="/priyu.png"
+            alt="Full-length mirror portrait of Priyadarshan wearing a black shirt"
+            width={640}
+            height={640}
+            priority
+            className="h-auto w-full rounded-[2rem] border-2 border-foreground bg-card object-cover"
+          />
           <span className="animate-wiggle absolute -bottom-4 -left-4 rounded-full border-2 border-foreground bg-card px-4 py-2 font-heading font-bold shadow-[3px_3px_0_0_var(--foreground)]">
             ✦ Future Innovator
           </span>

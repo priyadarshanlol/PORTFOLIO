@@ -4,19 +4,12 @@ import { ArrowUpRight } from "lucide-react"
 const projects = [
   {
     title: "Calibay — AI Resume Analyzer",
+    href: "https://calibay-prototype-rh0e2g3w0-pavantejap737-techs-projects.vercel.app",
     blurb:
       "AI-powered skill-gap analysis and resume optimization platform for Indian college students. Freemium + B2B institutional model (Free / ₹199 per month / ₹50 per student per year).",
     tags: ["Python", "React", "FastAPI", "Claude AI"],
     image: "/proj-calibay.png",
     tint: "bg-secondary",
-  },
-  {
-    title: "AI Medical Prediction System",
-    blurb:
-      "A machine-learning model that predicts disease likelihood from symptoms and vitals, surfaced through a simple Flask interface.",
-    tags: ["Python", "scikit-learn", "Pandas", "Flask"],
-    image: "/proj-medical.png",
-    tint: "bg-accent",
   },
   {
     title: "IoT Fire Detection System",
@@ -28,6 +21,7 @@ const projects = [
   },
   {
     title: "2D Graphics Editor (C)",
+    href: "https://github.com/priyadarshanlol/ACP-.git",
     blurb:
       "A terminal-based graphics editor using pointers and dynamic shapes — a canvas grid with full CRUD operations on shapes.",
     tags: ["C", "Pointer Arithmetic", "Terminal UI"],
@@ -57,9 +51,13 @@ export function Projects() {
 
         <div className="mt-12 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <article
+            <a
               key={project.title}
-              className="group flex flex-col overflow-hidden rounded-3xl border-2 border-foreground bg-card shadow-[6px_6px_0_0_var(--foreground)] transition-transform hover:-translate-y-1.5"
+              href={project.href}
+              target={project.href ? "_blank" : undefined}
+              rel={project.href ? "noopener noreferrer" : undefined}
+              aria-label={project.href ? `Open ${project.title}` : undefined}
+              className={`group flex flex-col overflow-hidden rounded-3xl border-2 border-foreground bg-card shadow-[6px_6px_0_0_var(--foreground)] transition-transform hover:-translate-y-1.5 ${project.href ? "cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary" : "cursor-default"}`}
             >
               <div className={`border-b-2 border-foreground p-4 ${project.tint}`}>
                 <Image
@@ -72,7 +70,7 @@ export function Projects() {
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <div className="flex items-start justify-between gap-3">
-                  <h3 className="font-heading text-2xl font-extrabold leading-tight">
+                  <h3 className="font-heading text-2xl font-extrabold leading-tight transition-colors group-hover:text-primary">
                     {project.title}
                   </h3>
                   <span className="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full border-2 border-foreground bg-background transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
@@ -93,7 +91,7 @@ export function Projects() {
                   ))}
                 </ul>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </div>

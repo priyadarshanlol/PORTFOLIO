@@ -61,20 +61,6 @@ export function About() {
           ))}
         </div>
 
-        <div className="mt-6">
-          <div className="rounded-3xl border-2 border-foreground bg-card p-7 shadow-[5px_5px_0_0_var(--foreground)]">
-            <h3 className="font-heading text-2xl font-extrabold">My story</h3>
-            <p className="mt-3 leading-relaxed text-muted-foreground">
-              I&apos;m a Computer Science (AI &amp; Data Science) student at Reva
-              University, Bangalore, driven by the intersection of Artificial
-              Intelligence, Entrepreneurship, and Design. I taught myself Python,
-              UI/UX design, and AI fundamentals — and now I&apos;m building
-              Calibay, an AI-powered resume and skill-gap analysis platform for
-              Indian college students. I train daily and am laser-focused on
-              reaching financial independence through meaningful products.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   )
