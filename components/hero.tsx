@@ -86,7 +86,7 @@ export function Hero() {
           <div className="animate-float rounded-[2rem] border-2 border-foreground bg-secondary p-3 shadow-[8px_8px_0_0_var(--foreground)]">
             <Image
               src="/priyu.png"
-              alt="Portrait of Priyu standing on a city street at night"
+              alt="Full-length mirror portrait of Priyadarshan wearing a black shirt"
               width={640}
               height={640}
               priority
