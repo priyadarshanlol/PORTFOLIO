@@ -22,7 +22,7 @@ export function SiteNav() {
           <span className="flex size-9 items-center justify-center rounded-full border-2 border-foreground bg-primary text-primary-foreground">
             <Sparkles className="size-4" aria-hidden="true" />
           </span>
-          Priyu
+          Priyadarshan
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">

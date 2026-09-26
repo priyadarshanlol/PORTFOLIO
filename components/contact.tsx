@@ -51,7 +51,7 @@ export function Contact() {
       </div>
 
       <footer className="mx-auto mt-12 max-w-6xl border-t-2 border-foreground pt-6 text-center text-sm font-semibold text-muted-foreground">
-        Made with curiosity by Priyu — {new Date().getFullYear()}
+        Made with curiosity by Priyadarshan — {new Date().getFullYear()}
       </footer>
     </section>
   )

@@ -30,7 +30,7 @@ export function Hero() {
           </span>
 
           <h1 className="mt-5 text-balance font-heading text-5xl font-extrabold leading-[0.95] tracking-tight md:text-7xl">
-            Hi, I&apos;m Priyu — building with{" "}
+            Hi, I&apos;m Priyadarshan — building with{" "}
             <span className="text-primary">AI</span>, designing with{" "}
             <span className="text-accent">intent</span>.
           </h1>

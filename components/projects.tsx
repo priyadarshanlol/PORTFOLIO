@@ -4,19 +4,12 @@ import { ArrowUpRight } from "lucide-react"
 const projects = [
   {
     title: "Calibay — AI Resume Analyzer",
+    href: "https://calibay-prototype-rh0e2g3w0-pavantejap737-techs-projects.vercel.app",
     blurb:
       "AI-powered skill-gap analysis and resume optimization platform for Indian college students. Freemium + B2B institutional model (Free / ₹199 per month / ₹50 per student per year).",
     tags: ["Python", "React", "FastAPI", "Claude AI"],
     image: "/proj-calibay.png",
     tint: "bg-secondary",
-  },
-  {
-    title: "AI Medical Prediction System",
-    blurb:
-      "A machine-learning model that predicts disease likelihood from symptoms and vitals, surfaced through a simple Flask interface.",
-    tags: ["Python", "scikit-learn", "Pandas", "Flask"],
-    image: "/proj-medical.png",
-    tint: "bg-accent",
   },
   {
     title: "IoT Fire Detection System",
@@ -28,6 +21,7 @@ const projects = [
   },
   {
     title: "2D Graphics Editor (C)",
+    href: "https://github.com/priyadarshanlol/ACP-.git",
     blurb:
       "A terminal-based graphics editor using pointers and dynamic shapes — a canvas grid with full CRUD operations on shapes.",
     tags: ["C", "Pointer Arithmetic", "Terminal UI"],
@@ -73,7 +67,18 @@ export function Projects() {
               <div className="flex flex-1 flex-col p-6">
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="font-heading text-2xl font-extrabold leading-tight">
-                    {project.title}
+                    {project.href ? (
+                      <a
+                        href={project.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-primary"
+                      >
+                        {project.title}
+                      </a>
+                    ) : (
+                      project.title
+                    )}
                   </h3>
                   <span className="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full border-2 border-foreground bg-background transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                     <ArrowUpRight className="size-4" aria-hidden="true" />
