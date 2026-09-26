@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 
@@ -53,7 +55,18 @@ export function Projects() {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="group flex flex-col overflow-hidden rounded-3xl border-2 border-foreground bg-card shadow-[6px_6px_0_0_var(--foreground)] transition-transform hover:-translate-y-1.5"
+              role={project.href ? "link" : undefined}
+              tabIndex={project.href ? 0 : undefined}
+              onClick={() => {
+                if (project.href) window.open(project.href, "_blank", "noopener,noreferrer")
+              }}
+              onKeyDown={(event) => {
+                if (project.href && (event.key === "Enter" || event.key === " ")) {
+                  event.preventDefault()
+                  window.open(project.href, "_blank", "noopener,noreferrer")
+                }
+              }}
+              className={`group flex flex-col overflow-hidden rounded-3xl border-2 border-foreground bg-card shadow-[6px_6px_0_0_var(--foreground)] transition-transform hover:-translate-y-1.5 ${project.href ? "cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary" : ""}`}
             >
               <div className={`border-b-2 border-foreground p-4 ${project.tint}`}>
                 <Image
@@ -66,19 +79,8 @@ export function Projects() {
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <div className="flex items-start justify-between gap-3">
-                  <h3 className="font-heading text-2xl font-extrabold leading-tight">
-                    {project.href ? (
-                      <a
-                        href={project.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="transition-colors hover:text-primary"
-                      >
-                        {project.title}
-                      </a>
-                    ) : (
-                      project.title
-                    )}
+                  <h3 className="font-heading text-2xl font-extrabold leading-tight transition-colors group-hover:text-primary">
+                    {project.title}
                   </h3>
                   <span className="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full border-2 border-foreground bg-background transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                     <ArrowUpRight className="size-4" aria-hidden="true" />
