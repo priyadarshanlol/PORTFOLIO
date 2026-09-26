@@ -84,16 +84,14 @@ export function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-sm">
-          <div className="animate-float rounded-[2rem] border-2 border-foreground bg-secondary p-3 shadow-[8px_8px_0_0_var(--foreground)]">
-            <Image
-              src="/priyu.png"
-              alt="Full-length mirror portrait of Priyadarshan wearing a black shirt"
-              width={640}
-              height={640}
-              priority
-              className="h-auto w-full rounded-[1.5rem] border-2 border-foreground bg-card object-cover"
-            />
-          </div>
+          <Image
+            src="/priyu.png"
+            alt="Full-length mirror portrait of Priyadarshan wearing a black shirt"
+            width={640}
+            height={640}
+            priority
+            className="h-auto w-full rounded-[2rem] border-2 border-foreground bg-card object-cover"
+          />
           <span className="animate-wiggle absolute -bottom-4 -left-4 rounded-full border-2 border-foreground bg-card px-4 py-2 font-heading font-bold shadow-[3px_3px_0_0_var(--foreground)]">
             ✦ Future Innovator
           </span>
