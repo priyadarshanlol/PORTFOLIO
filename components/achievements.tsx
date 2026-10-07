@@ -48,7 +48,7 @@ export function Achievements() {
           {wins.map((win) => (
             <li
               key={win.title}
-              className="flex flex-col gap-4 rounded-3xl border-2 border-foreground bg-card p-6 shadow-[5px_5px_0_0_var(--foreground)] sm:flex-row sm:items-center"
+              className="flex flex-col gap-4 rounded-3xl border-2 border-foreground glass-panel p-6 shadow-[5px_5px_0_0_var(--foreground)] sm:flex-row sm:items-center"
             >
               <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl border-2 border-foreground bg-secondary">
                 <win.icon className="size-6" aria-hidden="true" />

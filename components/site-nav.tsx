@@ -16,7 +16,7 @@ export function SiteNav() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b-2 border-foreground bg-background/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-foreground/15 bg-background/55 backdrop-blur-xl supports-[backdrop-filter]:bg-background/35">
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
         <a href="#top" className="flex items-center gap-3 font-heading text-lg font-bold tracking-tight">
           <span className="font-mono text-xs text-primary">01</span>
