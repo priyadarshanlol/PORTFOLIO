@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, X, Sparkles } from "lucide-react"
+import { Menu, X, ArrowUpRight } from "lucide-react"
 
 const links = [
   { label: "About", href: "#about" },
@@ -18,11 +18,9 @@ export function SiteNav() {
   return (
     <header className="sticky top-0 z-50 border-b-2 border-foreground bg-background/90 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
-        <a href="#top" className="flex items-center gap-2 font-heading text-xl font-extrabold">
-          <span className="flex size-9 items-center justify-center rounded-full border-2 border-foreground bg-primary text-primary-foreground">
-            <Sparkles className="size-4" aria-hidden="true" />
-          </span>
-          Priyadarshan
+        <a href="#top" className="flex items-center gap-3 font-heading text-lg font-bold tracking-tight">
+          <span className="font-mono text-xs text-primary">01</span>
+          Priyadarshan<span className="text-primary">.</span>
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
@@ -40,9 +38,9 @@ export function SiteNav() {
 
         <a
           href="#contact"
-          className="hidden rounded-full border-2 border-foreground bg-accent px-4 py-2 text-sm font-bold text-accent-foreground shadow-[3px_3px_0_0_var(--foreground)] transition-transform hover:-translate-y-0.5 md:inline-block"
+          className="hidden items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-transform hover:-translate-y-0.5 md:inline-flex"
         >
-          Get in touch
+          Get in touch <ArrowUpRight className="size-4" aria-hidden="true" />
         </a>
 
         <button
