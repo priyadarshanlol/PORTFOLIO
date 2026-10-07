@@ -1,5 +1,4 @@
-import Image from "next/image"
-import { ArrowDown, MapPin, GraduationCap } from "lucide-react"
+import { ArrowDown, MapPin, GraduationCap, Sparkles, Braces, Orbit } from "lucide-react"
 import { GithubIcon, LinkedinIcon, GmailIcon } from "@/components/brand-icons"
 
 const profileLinks = [
@@ -83,17 +82,31 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-sm">
-          <Image
-            src="/priyu.png"
-            alt="Full-length mirror portrait of Priyadarshan wearing a black shirt"
-            width={640}
-            height={640}
-            priority
-            className="h-auto w-full rounded-[2rem] border-2 border-foreground bg-card object-cover"
-          />
-          <span className="animate-wiggle absolute -bottom-4 -left-4 rounded-full border-2 border-foreground bg-card px-4 py-2 font-heading font-bold shadow-[3px_3px_0_0_var(--foreground)]">
-            ✦ Future Innovator
+        <div className="relative mx-auto w-full max-w-md">
+          <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-foreground/15 bg-card p-6 shadow-2xl shadow-black/20 md:p-10">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,color-mix(in_oklab,var(--primary)_24%,transparent),transparent_34%),linear-gradient(135deg,transparent_45%,color-mix(in_oklab,var(--accent)_12%,transparent))]" />
+            <div className="relative flex h-full flex-col justify-between">
+              <div className="flex items-center justify-between text-muted-foreground">
+                <span className="font-mono text-xs tracking-[0.24em]">PD / 2026</span>
+                <Orbit className="size-5 text-primary" aria-hidden="true" />
+              </div>
+              <div>
+                <div className="mb-6 flex items-center gap-3 text-primary">
+                  <Sparkles className="size-5" aria-hidden="true" />
+                  <span className="text-xs font-bold uppercase tracking-[0.3em]">Selected signal</span>
+                </div>
+                <p className="font-heading text-5xl font-bold leading-[0.92] tracking-tight md:text-6xl">
+                  Ideas into <span className="text-primary">impact.</span>
+                </p>
+                <div className="mt-8 flex items-center gap-3 font-mono text-xs text-muted-foreground">
+                  <Braces className="size-4 text-accent" aria-hidden="true" />
+                  <span>ai / product / systems</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span className="absolute -bottom-4 -right-3 rounded-full border border-primary/50 bg-primary px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-lg shadow-primary/20">
+            Building in public
           </span>
         </div>
       </div>
