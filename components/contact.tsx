@@ -27,7 +27,7 @@ export function Contact() {
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <a
             href="mailto:priyadarshanv21@gmail.com"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card px-6 py-3 font-bold text-foreground shadow-[4px_4px_0_0_var(--foreground)] transition-transform hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-foreground glass-panel px-6 py-3 font-bold text-foreground shadow-[4px_4px_0_0_var(--foreground)] transition-transform hover:-translate-y-0.5"
           >
             <GmailIcon className="size-5" />
             priyadarshanv21@gmail.com

@@ -59,7 +59,7 @@ export function Skills() {
         </h2>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <div className="rounded-3xl border-2 border-foreground bg-card p-6 shadow-[5px_5px_0_0_var(--foreground)]">
+          <div className="rounded-3xl border-2 border-foreground glass-panel p-6 shadow-[5px_5px_0_0_var(--foreground)]">
             <span className="inline-block rounded-full border-2 border-foreground bg-secondary px-4 py-1 font-heading font-extrabold">
               Technical
             </span>
@@ -70,7 +70,7 @@ export function Skills() {
             </ul>
           </div>
 
-          <div className="rounded-3xl border-2 border-foreground bg-card p-6 shadow-[5px_5px_0_0_var(--foreground)]">
+          <div className="rounded-3xl border-2 border-foreground glass-panel p-6 shadow-[5px_5px_0_0_var(--foreground)]">
             <span className="inline-block rounded-full border-2 border-foreground bg-accent px-4 py-1 font-heading font-extrabold text-accent-foreground">
               Tools & Platforms
             </span>
@@ -82,7 +82,7 @@ export function Skills() {
           </div>
         </div>
 
-        <div className="mt-6 rounded-3xl border-2 border-foreground bg-card p-6 shadow-[5px_5px_0_0_var(--foreground)]">
+        <div className="mt-6 rounded-3xl border-2 border-foreground glass-panel p-6 shadow-[5px_5px_0_0_var(--foreground)]">
           <span className="inline-block rounded-full border-2 border-foreground bg-primary px-4 py-1 font-heading font-extrabold text-primary-foreground">
             Soft Skills
           </span>

@@ -23,7 +23,7 @@ const facts = [
     icon: Target,
     title: "Disciplined & driven",
     body: "Consistent daily training and a relentless focus on shipping meaningful AI products.",
-    color: "bg-card",
+    color: "glass-panel",
   },
 ]
 

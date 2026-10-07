@@ -24,7 +24,7 @@ export function Hero() {
 
       <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card px-3 py-1 text-sm font-bold">
+          <span className="inline-flex items-center gap-2 rounded-full border-2 border-foreground glass-panel px-3 py-1 text-sm font-bold">
             <span className="size-2 rounded-full bg-primary" />
             Engineering Student · AI Enthusiast
           </span>
@@ -51,7 +51,7 @@ export function Hero() {
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card px-6 py-3 font-bold transition-transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-foreground glass-panel px-6 py-3 font-bold transition-transform hover:-translate-y-0.5"
             >
               Let&apos;s connect
             </a>
@@ -74,7 +74,7 @@ export function Hero() {
                 target={link.href.startsWith("mailto:") ? undefined : "_blank"}
                 rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
                 aria-label={link.label}
-                className="flex size-11 items-center justify-center rounded-full border-2 border-foreground bg-card text-foreground shadow-[3px_3px_0_0_var(--foreground)] transition-transform hover:-translate-y-0.5"
+                className="flex size-11 items-center justify-center rounded-full border-2 border-foreground glass-panel text-foreground shadow-[3px_3px_0_0_var(--foreground)] transition-transform hover:-translate-y-0.5"
               >
                 <link.icon className="size-5" aria-hidden="true" />
               </a>
@@ -83,7 +83,7 @@ export function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-md">
-          <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-foreground/15 bg-card p-6 shadow-2xl shadow-black/20 md:p-10">
+          <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-foreground/15 glass-panel p-6 shadow-2xl shadow-black/20 md:p-10">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,color-mix(in_oklab,var(--primary)_24%,transparent),transparent_34%),linear-gradient(135deg,transparent_45%,color-mix(in_oklab,var(--accent)_12%,transparent))]" />
             <div className="relative flex h-full flex-col justify-between">
               <div className="flex items-center justify-between text-muted-foreground">

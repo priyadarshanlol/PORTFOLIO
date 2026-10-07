@@ -57,7 +57,7 @@ export function Projects() {
               target={project.href ? "_blank" : undefined}
               rel={project.href ? "noopener noreferrer" : undefined}
               aria-label={project.href ? `Open ${project.title}` : undefined}
-              className={`group flex flex-col overflow-hidden rounded-3xl border-2 border-foreground bg-card shadow-[6px_6px_0_0_var(--foreground)] transition-transform hover:-translate-y-1.5 ${project.href ? "cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary" : "cursor-default"}`}
+              className={`group flex flex-col overflow-hidden rounded-3xl border-2 border-foreground glass-panel shadow-[6px_6px_0_0_var(--foreground)] transition-transform hover:-translate-y-1.5 ${project.href ? "cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary" : "cursor-default"}`}
             >
               <div className={`border-b-2 border-foreground p-4 ${project.tint}`}>
                 <Image
@@ -65,7 +65,7 @@ export function Projects() {
                   alt={`${project.title} project illustration`}
                   width={520}
                   height={400}
-                  className="h-44 w-full rounded-2xl border-2 border-foreground bg-card object-cover"
+                  className="h-44 w-full rounded-2xl border-2 border-foreground glass-panel object-cover"
                 />
               </div>
               <div className="flex flex-1 flex-col p-6">

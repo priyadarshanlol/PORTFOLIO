@@ -52,7 +52,7 @@ export function Experience() {
             {roles.map((r) => (
               <div
                 key={r.role}
-                className="flex gap-4 rounded-3xl border-2 border-foreground bg-card p-6 shadow-[5px_5px_0_0_var(--foreground)]"
+                className="flex gap-4 rounded-3xl border-2 border-foreground glass-panel p-6 shadow-[5px_5px_0_0_var(--foreground)]"
               >
                 <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl border-2 border-foreground bg-secondary">
                   <r.icon className="size-6" aria-hidden="true" />
@@ -76,7 +76,7 @@ export function Experience() {
               {certs.map((c) => (
                 <li
                   key={c.name}
-                  className="rounded-2xl border-2 border-foreground bg-card p-4"
+                  className="rounded-2xl border-2 border-foreground glass-panel p-4"
                 >
                   <div className="flex items-start gap-3">
                     <BadgeCheck className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" />
