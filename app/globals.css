@@ -205,3 +205,36 @@
 .animate-marquee {
   animation: marquee 22s linear infinite;
 }
+
+.cursor-glow {
+  position: fixed;
+  z-index: 0;
+  top: -180px;
+  left: -180px;
+  width: 360px;
+  height: 360px;
+  pointer-events: none;
+  border-radius: 9999px;
+  opacity: 0;
+  filter: blur(24px);
+  background: radial-gradient(
+    circle,
+    color-mix(in oklch, var(--primary) 24%, transparent) 0%,
+    color-mix(in oklch, var(--accent) 14%, transparent) 38%,
+    transparent 72%
+  );
+  transition: opacity 180ms ease;
+  will-change: transform;
+}
+
+@media (pointer: fine) {
+  .cursor-glow {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-glow {
+    display: none;
+  }
+}
