@@ -1,4 +1,6 @@
 import { Rocket, Timer, Award, Code2, TrendingUp } from "lucide-react"
+import { Reveal } from "@/components/retro/reveal"
+import { SectionHeader } from "@/components/retro/section-header"
 
 const wins = [
   {
@@ -35,35 +37,54 @@ const wins = [
 
 export function Achievements() {
   return (
-    <section id="achievements" className="bg-muted px-4 py-20 md:px-6">
-      <div className="mx-auto max-w-6xl">
-        <p className="font-heading text-sm font-bold uppercase tracking-widest text-primary">
-          Little wins
-        </p>
-        <h2 className="mt-2 font-heading text-4xl font-extrabold md:text-5xl">
-          Highlights &amp; reflections
-        </h2>
+    <section id="achievements" className="px-4 py-24 md:px-6">
+      <Reveal className="mx-auto max-w-6xl">
+        <SectionHeader index="05" label="Little wins" title="Highlights & reflections" />
 
-        <ol className="mt-12 space-y-5">
-          {wins.map((win) => (
-            <li
-              key={win.title}
-              className="flex flex-col gap-4 rounded-3xl border-2 border-foreground glass-panel p-6 shadow-[5px_5px_0_0_var(--foreground)] sm:flex-row sm:items-center"
-            >
-              <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl border-2 border-foreground bg-secondary">
-                <win.icon className="size-6" aria-hidden="true" />
-              </span>
-              <div className="flex-1">
-                <h3 className="font-heading text-xl font-extrabold">{win.title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{win.body}</p>
-              </div>
-              <span className="self-start rounded-full border-2 border-foreground bg-accent px-3 py-1 text-sm font-bold text-accent-foreground sm:self-center">
-                {win.year}
-              </span>
-            </li>
-          ))}
-        </ol>
-      </div>
+        <div className="panel panel-ticks mt-14 overflow-hidden">
+          <table className="w-full border-collapse text-left">
+            <caption className="sr-only">Highlights and achievements</caption>
+            <thead className="hidden border-b border-[var(--line)] md:table-header-group">
+              <tr className="label-mono text-beige/70">
+                <th scope="col" className="w-24 px-6 py-3 font-medium">Code</th>
+                <th scope="col" className="px-6 py-3 font-medium">Record</th>
+                <th scope="col" className="w-32 px-6 py-3 text-right font-medium">Reading</th>
+              </tr>
+            </thead>
+            <tbody>
+              {wins.map((win, i) => (
+                <tr
+                  key={win.title}
+                  className="group flex flex-col gap-2 border-b border-[var(--line)] px-5 py-5 transition-colors duration-300 last:border-b-0 hover:bg-blue/[0.06] md:table-row md:p-0"
+                >
+                  <td className="flex items-center gap-3 md:table-cell md:px-6 md:py-5 md:align-top">
+                    <span className="flex items-center gap-3">
+                      <span className="font-mono text-xs text-beige/70 tabular-nums">
+                        W-{String(i + 1).padStart(2, "0")}
+                      </span>
+                      <win.icon className="size-4 text-blue md:hidden" aria-hidden="true" />
+                    </span>
+                  </td>
+                  <td className="md:px-6 md:py-5">
+                    <div className="flex items-start gap-3">
+                      <win.icon className="mt-1 hidden size-4 shrink-0 text-blue md:block" aria-hidden="true" />
+                      <div>
+                        <h3 className="font-heading text-lg font-medium leading-snug text-paper">{win.title}</h3>
+                        <p className="mt-1 text-sm leading-relaxed text-cream/70">{win.body}</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="md:px-6 md:py-5 md:text-right md:align-top">
+                    <span className="inline-block rounded-[3px] border border-gold/35 px-2.5 py-1 font-mono text-sm tabular-nums text-gold">
+                      {win.year}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </Reveal>
     </section>
   )
 }

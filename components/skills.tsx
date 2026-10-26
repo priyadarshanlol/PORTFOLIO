@@ -1,3 +1,8 @@
+import { Reveal } from "@/components/retro/reveal"
+import { SectionHeader } from "@/components/retro/section-header"
+import { RadialGauge } from "@/components/retro/radial-gauge"
+import { SegmentMeter } from "@/components/retro/segment-meter"
+
 const technical = [
   { name: "UI/UX Design (Figma)", level: 80 },
   { name: "HTML / CSS / JavaScript", level: 75 },
@@ -25,79 +30,67 @@ const soft = [
   "Entrepreneurial Thinking",
 ]
 
-function Bar({ name, level }: { name: string; level: number }) {
+function PanelHeader({ code, title, count }: { code: string; title: string; count: number }) {
   return (
-    <li>
-      <div className="flex items-center justify-between gap-3">
-        <span className="text-sm font-semibold">{name}</span>
-        <span className="font-heading text-sm font-extrabold text-primary">{level}%</span>
+    <div className="flex items-center justify-between border-b border-[var(--line)] pb-4">
+      <div className="flex items-baseline gap-3">
+        <span className="label-mono text-blue">{code}</span>
+        <h3 className="font-heading text-lg font-medium text-paper">{title}</h3>
       </div>
-      <div className="mt-1.5 h-3 w-full overflow-hidden rounded-full border-2 border-foreground bg-background">
-        <div
-          className="h-full rounded-full bg-primary"
-          style={{ width: `${level}%` }}
-          role="progressbar"
-          aria-valuenow={level}
-          aria-valuemin={0}
-          aria-valuemax={100}
-          aria-label={name}
-        />
-      </div>
-    </li>
+      <span className="label-mono text-beige/70">{String(count).padStart(2, "0")} ch</span>
+    </div>
   )
 }
 
 export function Skills() {
   return (
-    <section id="skills" className="bg-muted px-4 py-20 md:px-6">
-      <div className="mx-auto max-w-6xl">
-        <p className="font-heading text-sm font-bold uppercase tracking-widest text-primary">
-          My toolkit
-        </p>
-        <h2 className="mt-2 font-heading text-4xl font-extrabold md:text-5xl">
-          Things I&apos;m good at (and getting better)
-        </h2>
+    <section id="skills" className="px-4 py-24 md:px-6">
+      <Reveal className="mx-auto max-w-6xl">
+        <SectionHeader
+          index="02"
+          label="My toolkit"
+          title="Things I'm good at (and getting better)"
+          aside="Self-assessed readings, recalibrated as I learn."
+        />
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <div className="rounded-3xl border-2 border-foreground glass-panel p-6 shadow-[5px_5px_0_0_var(--foreground)]">
-            <span className="inline-block rounded-full border-2 border-foreground bg-secondary px-4 py-1 font-heading font-extrabold">
-              Technical
-            </span>
-            <ul className="mt-6 space-y-4">
-              {technical.map((s) => (
-                <Bar key={s.name} {...s} />
+        <div className="mt-14 grid gap-4 lg:grid-cols-[1.1fr_1fr]">
+          <div className="panel panel-ticks p-6 md:p-7">
+            <PanelHeader code="A" title="Technical" count={technical.length} />
+            <ul className="mt-6 space-y-5">
+              {technical.map((s, i) => (
+                <SegmentMeter key={s.name} code={`A${i + 1}`} {...s} />
               ))}
             </ul>
           </div>
 
-          <div className="rounded-3xl border-2 border-foreground glass-panel p-6 shadow-[5px_5px_0_0_var(--foreground)]">
-            <span className="inline-block rounded-full border-2 border-foreground bg-accent px-4 py-1 font-heading font-extrabold text-accent-foreground">
-              Tools & Platforms
-            </span>
-            <ul className="mt-6 space-y-4">
+          <div className="panel panel-ticks p-6 md:p-7">
+            <PanelHeader code="B" title="Tools & Platforms" count={tools.length} />
+            <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3">
               {tools.map((s) => (
-                <Bar key={s.name} {...s} />
+                <RadialGauge key={s.name} {...s} />
               ))}
-            </ul>
+            </div>
           </div>
         </div>
 
-        <div className="mt-6 rounded-3xl border-2 border-foreground glass-panel p-6 shadow-[5px_5px_0_0_var(--foreground)]">
-          <span className="inline-block rounded-full border-2 border-foreground bg-primary px-4 py-1 font-heading font-extrabold text-primary-foreground">
-            Soft Skills
-          </span>
-          <ul className="mt-5 flex flex-wrap gap-2">
+        <div className="panel mt-4 flex flex-col gap-4 p-6 md:flex-row md:items-center md:p-7">
+          <div className="flex items-baseline gap-3 md:w-56 md:shrink-0">
+            <span className="label-mono text-blue">C</span>
+            <h3 className="font-heading text-lg font-medium text-paper">Soft Skills</h3>
+          </div>
+          <ul className="flex flex-wrap gap-2">
             {soft.map((skill) => (
               <li
                 key={skill}
-                className="rounded-full border-2 border-foreground bg-background px-3 py-1.5 text-sm font-semibold"
+                className="flex items-center gap-2 rounded border border-[var(--line-strong)] px-3 py-1.5 font-mono text-xs text-cream"
               >
+                <span aria-hidden="true" className="size-1.5 rounded-full bg-blue" />
                 {skill}
               </li>
             ))}
           </ul>
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }

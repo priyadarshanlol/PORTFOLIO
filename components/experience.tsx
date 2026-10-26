@@ -1,4 +1,6 @@
 import { Briefcase, PenTool, BadgeCheck } from "lucide-react"
+import { Reveal } from "@/components/retro/reveal"
+import { SectionHeader } from "@/components/retro/section-header"
 
 const roles = [
   {
@@ -38,64 +40,70 @@ const certs = [
 
 export function Experience() {
   return (
-    <section id="experience" className="px-4 py-20 md:px-6">
+    <section id="experience" className="px-4 py-24 md:px-6">
       <div className="mx-auto max-w-6xl">
-        <p className="font-heading text-sm font-bold uppercase tracking-widest text-primary">
-          What I do
-        </p>
-        <h2 className="mt-2 font-heading text-4xl font-extrabold md:text-5xl">
-          Experience &amp; certifications
-        </h2>
+        <Reveal>
+          <SectionHeader index="04" label="What I do" title="Experience & certifications" />
+        </Reveal>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <div className="space-y-5">
-            {roles.map((r) => (
-              <div
-                key={r.role}
-                className="flex gap-4 rounded-3xl border-2 border-foreground glass-panel p-6 shadow-[5px_5px_0_0_var(--foreground)]"
-              >
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl border-2 border-foreground bg-secondary">
-                  <r.icon className="size-6" aria-hidden="true" />
-                </span>
-                <div>
-                  <div className="flex flex-wrap items-center gap-x-3">
-                    <h3 className="font-heading text-xl font-extrabold">{r.role}</h3>
-                    <span className="text-sm font-bold text-primary">{r.period}</span>
+        <div className="mt-14 grid items-start gap-4 lg:grid-cols-[1fr_1.15fr]">
+          {/* Timeline */}
+          <Reveal className="panel panel-ticks p-6 md:p-7">
+            <div className="flex items-center justify-between border-b border-[var(--line)] pb-4">
+              <h3 className="font-heading text-lg font-medium text-paper">Timeline</h3>
+              <span className="label-mono text-beige/70">Present ← 2023</span>
+            </div>
+            <ol className="relative mt-7 space-y-9 pl-9">
+              <span
+                aria-hidden="true"
+                className="timeline-line absolute bottom-2 left-[7px] top-2 w-px bg-gradient-to-b from-amber via-blue/60 to-[var(--line)]"
+              />
+              {roles.map((r, i) => (
+                <li key={r.role} className="relative">
+                  <span
+                    aria-hidden="true"
+                    className="timeline-marker absolute -left-9 top-1 size-[15px] rounded-full border-2"
+                    style={{ transitionDelay: `${300 + i * 450}ms` }}
+                  />
+                  <p className="label-mono text-amber">{r.period}</p>
+                  <div className="mt-2 flex items-center gap-3">
+                    <r.icon className="size-4 shrink-0 text-blue" aria-hidden="true" />
+                    <h4 className="font-heading text-lg font-medium leading-snug text-paper">{r.role}</h4>
                   </div>
-                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{r.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+                  <p className="mt-2 text-sm leading-relaxed text-cream/70">{r.body}</p>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
 
-          <div className="rounded-3xl border-2 border-foreground bg-muted p-6 shadow-[5px_5px_0_0_var(--foreground)]">
-            <span className="inline-block rounded-full border-2 border-foreground bg-accent px-4 py-1 font-heading font-extrabold text-accent-foreground">
-              Certifications
-            </span>
-            <ul className="mt-5 space-y-3">
-              {certs.map((c) => (
-                <li
-                  key={c.name}
-                  className="rounded-2xl border-2 border-foreground glass-panel p-4"
-                >
+          {/* Certification records */}
+          <Reveal className="panel-cream p-6 md:p-7">
+            <div className="flex items-center justify-between border-b border-navy/20 pb-4">
+              <h3 className="font-heading text-lg font-medium text-navy">Certifications</h3>
+              <span className="label-mono text-navy/60">Records · {String(certs.length).padStart(2, "0")}</span>
+            </div>
+            <ul className="mt-5 space-y-5">
+              {certs.map((c, i) => (
+                <li key={c.name} className={i > 0 ? "border-t border-navy/15 pt-5" : ""}>
                   <div className="flex items-start gap-3">
-                    <BadgeCheck className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" />
+                    <BadgeCheck className="mt-0.5 size-5 shrink-0 text-sci" aria-hidden="true" />
                     <div className="flex-1">
-                      <p className="font-heading font-extrabold leading-tight">{c.name}</p>
-                      <p className="text-sm text-muted-foreground">{c.org}</p>
-                      <p className="mt-1 text-xs font-bold text-muted-foreground">Issued {c.date}</p>
+                      <p className="font-heading font-medium leading-snug text-navy">{c.name}</p>
+                      <p className="text-sm text-navy/70">{c.org}</p>
+                      <p className="label-mono mt-1.5 text-[0.62rem] text-navy/60">Issued {c.date}</p>
                     </div>
                   </div>
                   <img
                     src={c.image}
                     alt={`${c.name} certificate for Priyadarshan`}
-                    className="mt-4 h-44 w-full rounded-xl border-2 border-foreground object-contain object-left bg-white"
+                    loading="lazy"
+                    className="mt-4 h-44 w-full rounded border border-navy/20 bg-white object-contain object-left"
                   />
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.description}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-navy/75">{c.description}</p>
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

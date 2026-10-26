@@ -11,13 +11,14 @@ const items = [
 
 export function Marquee() {
   return (
-    <div className="border-y-2 border-foreground bg-primary py-3 text-primary-foreground">
-      <div className="flex overflow-hidden">
-        <div className="animate-marquee flex shrink-0 items-center gap-6 whitespace-nowrap pr-6">
+    <div className="relative border-y border-[var(--line)] bg-graphite/80 py-3 text-cream">
+      <div className="flex overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_8%,black_92%,transparent)]">
+        <div className="animate-ticker flex shrink-0 items-center gap-8 whitespace-nowrap pr-8">
           {[...items, ...items].map((item, i) => (
-            <span key={i} className="flex items-center gap-6 font-heading text-lg font-bold">
+            <span key={i} className="label-mono flex items-center gap-8 text-xs" aria-hidden={i >= items.length}>
+              <span className="text-beige/60 tabular-nums">{String((i % items.length) + 1).padStart(2, "0")}</span>
               {item}
-              <span aria-hidden="true">✦</span>
+              <span aria-hidden="true" className="size-1 rounded-full bg-blue" />
             </span>
           ))}
         </div>

@@ -1,5 +1,6 @@
-import { ArrowDown, MapPin, GraduationCap, Sparkles, Braces, Orbit } from "lucide-react"
+import { ArrowDown, MapPin, GraduationCap } from "lucide-react"
 import { GithubIcon, LinkedinIcon, GmailIcon } from "@/components/brand-icons"
+import { OrbitalInstrument } from "@/components/retro/orbital-instrument"
 
 const profileLinks = [
   { icon: GithubIcon, label: "GitHub", href: "https://github.com/priyadarshanlol" },
@@ -11,103 +12,100 @@ const profileLinks = [
   { icon: GmailIcon, label: "Email", href: "mailto:priyadarshanv21@gmail.com" },
 ]
 
+const readouts = [
+  { label: "Unit", value: "PD / 2026" },
+  { label: "Field", value: "AI & Data Science" },
+  { label: "Status", value: "Building Calibay" },
+]
+
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden px-4 py-16 md:px-6 md:py-24">
-      {/* playful floating stickers */}
-      <span className="absolute left-6 top-10 hidden rotate-12 rounded-2xl border-2 border-foreground bg-secondary px-3 py-1 font-heading text-sm font-bold shadow-[3px_3px_0_0_var(--foreground)] md:block">
-        Hello!
-      </span>
-      <span className="absolute right-10 top-24 hidden -rotate-6 rounded-2xl border-2 border-foreground bg-accent px-3 py-1 font-heading text-sm font-bold text-accent-foreground shadow-[3px_3px_0_0_var(--foreground)] lg:block">
-        Building Calibay
-      </span>
-
-      <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
+    <section id="top" className="relative px-4 pb-20 pt-14 md:px-6 md:pb-28 md:pt-20">
+      <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1.15fr_1fr]">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border-2 border-foreground glass-panel px-3 py-1 text-sm font-bold">
-            <span className="size-2 rounded-full bg-primary" />
-            Engineering Student · AI Enthusiast
-          </span>
+          <p className="label-mono flex items-center gap-3 text-beige">
+            <span className="lamp" aria-hidden="true" />
+            Hello! · Engineering Student · AI Enthusiast
+          </p>
 
-          <h1 className="mt-5 text-balance font-heading text-5xl font-extrabold leading-[0.95] tracking-tight md:text-7xl">
-            Hi, I&apos;m Priyadarshan — building with{" "}
-            <span className="text-primary">AI</span>, designing with{" "}
-            <span className="text-accent">intent</span>.
+          <h1 className="mt-7 text-balance font-heading text-5xl font-medium leading-[0.98] tracking-[-0.03em] text-paper sm:text-6xl md:text-7xl">
+            Hi, I&apos;m Priyadarshan. Building with{" "}
+            <span className="text-amber">AI</span>, designing with{" "}
+            <span className="text-blue">intent</span>.
           </h1>
 
-          <p className="mt-6 max-w-md text-pretty text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-7 max-w-lg text-pretty text-lg leading-relaxed text-cream/75">
             A Computer Science (AI &amp; Data Science) student at Reva University,
             Bangalore. I live at the intersection of artificial intelligence,
-            entrepreneurship, and design — currently building Calibay, an AI resume
+            entrepreneurship, and design, currently building Calibay, an AI resume
             and skill-gap platform for Indian college students.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-primary px-6 py-3 font-bold text-primary-foreground shadow-[4px_4px_0_0_var(--foreground)] transition-transform hover:-translate-y-0.5"
-            >
-              See my work <ArrowDown className="size-4" />
+          <div className="mt-9 flex flex-wrap items-center gap-3">
+            <a href="#projects" className="btn btn-amber">
+              See my work <ArrowDown className="size-4" aria-hidden="true" />
             </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-foreground glass-panel px-6 py-3 font-bold transition-transform hover:-translate-y-0.5"
-            >
+            <a href="#contact" className="btn btn-line">
               Let&apos;s connect
             </a>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-5 text-sm font-semibold text-muted-foreground">
-            <span className="inline-flex items-center gap-1.5">
-              <MapPin className="size-4 text-primary" /> Bangalore, India
+          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4 border-t border-[var(--line)] pt-6">
+            <span className="inline-flex items-center gap-2 text-sm text-cream/75">
+              <MapPin className="size-4 text-blue" aria-hidden="true" /> Bangalore, India
             </span>
-            <span className="inline-flex items-center gap-1.5">
-              <GraduationCap className="size-4 text-accent" /> Reva University
+            <span className="inline-flex items-center gap-2 text-sm text-cream/75">
+              <GraduationCap className="size-4 text-blue" aria-hidden="true" /> Reva University
             </span>
-          </div>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            {profileLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith("mailto:") ? undefined : "_blank"}
-                rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-                aria-label={link.label}
-                className="flex size-11 items-center justify-center rounded-full border-2 border-foreground glass-panel text-foreground shadow-[3px_3px_0_0_var(--foreground)] transition-transform hover:-translate-y-0.5"
-              >
-                <link.icon className="size-5" aria-hidden="true" />
-              </a>
-            ))}
+            <div className="flex gap-2 sm:ml-auto">
+              {profileLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                  aria-label={link.label}
+                  className="key"
+                >
+                  <link.icon className="size-[1.1rem]" aria-hidden="true" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-md">
-          <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-foreground/15 glass-panel p-6 shadow-2xl shadow-black/20 md:p-10">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,color-mix(in_oklab,var(--primary)_24%,transparent),transparent_34%),linear-gradient(135deg,transparent_45%,color-mix(in_oklab,var(--accent)_12%,transparent))]" />
-            <div className="relative flex h-full flex-col justify-between">
-              <div className="flex items-center justify-between text-muted-foreground">
-                <span className="font-mono text-xs tracking-[0.24em]">PD / 2026</span>
-                <Orbit className="size-5 text-primary" aria-hidden="true" />
-              </div>
-              <div>
-                <div className="mb-6 flex items-center gap-3 text-primary">
-                  <Sparkles className="size-5" aria-hidden="true" />
-                  <span className="text-xs font-bold uppercase tracking-[0.3em]">Selected signal</span>
-                </div>
-                <p className="font-heading text-5xl font-bold leading-[0.92] tracking-tight md:text-6xl">
-                  Ideas into <span className="text-primary">impact.</span>
-                </p>
-                <div className="mt-8 flex items-center gap-3 font-mono text-xs text-muted-foreground">
-                  <Braces className="size-4 text-accent" aria-hidden="true" />
-                  <span>ai / product / systems</span>
-                </div>
-              </div>
-            </div>
+        {/* Instrument console */}
+        <div className="panel panel-ticks relative mx-auto w-full max-w-md p-5 sm:p-6">
+          <div className="flex items-center justify-between text-beige">
+            <span className="label-mono">Selected signal</span>
+            <span className="label-mono flex items-center gap-2">
+              <span className="lamp lamp-blue" aria-hidden="true" />
+              Building in public
+            </span>
           </div>
-          <span className="absolute -bottom-4 -right-3 rounded-full border border-primary/50 bg-primary px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-lg shadow-primary/20">
-            Building in public
-          </span>
+
+          <div className="relative mx-auto mt-4 aspect-square w-full max-w-[340px]">
+            <OrbitalInstrument />
+            <span className="label-mono absolute left-1/2 top-0 -translate-x-1/2 bg-graphite px-1 text-[0.6rem] text-blue">AI</span>
+            <span className="label-mono absolute right-0 top-1/2 -translate-y-1/2 bg-graphite px-1 text-[0.6rem] text-beige">Product</span>
+            <span className="label-mono absolute bottom-0 left-1/2 -translate-x-1/2 bg-graphite px-1 text-[0.6rem] text-gold">
+              Systems
+            </span>
+          </div>
+
+          <p className="mt-4 font-heading text-3xl font-medium leading-tight tracking-tight text-paper">
+            Ideas into <span className="text-amber">impact.</span>
+          </p>
+          <p className="mt-1 font-mono text-xs text-beige">ai / product / systems</p>
+
+          <dl className="mt-5 grid grid-cols-3 border-t border-[var(--line)] pt-4">
+            {readouts.map((r, i) => (
+              <div key={r.label} className={i > 0 ? "border-l border-[var(--line)] pl-3" : ""}>
+                <dt className="label-mono text-[0.6rem] text-beige/70">{r.label}</dt>
+                <dd className="mt-1 font-mono text-xs leading-snug text-cream">{r.value}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>
